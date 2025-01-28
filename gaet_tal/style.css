@@ -1,0 +1,38 @@
+.container {
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #999999;
+  color: #f3ece7;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
+}
+
+h2 {
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
+  padding-bottom: 40px;
+}
+
+.user {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+button {
+  all: unset;
+  border: solid 1px #ebcfc4;
+  padding: 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ebcfc4;
+  color: #999999;
+}
