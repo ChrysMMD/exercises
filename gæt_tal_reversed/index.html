@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gæt et tal</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 20px;
+      }
+
+      #knapper button {
+        margin: 5px;
+        padding: 10px 20px;
+        font-size: 16px;
+      }
+
+      #message {
+        margin: 20px;
+        font-size: 20px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Gæt et tal mellem 1-100!</h1>
+    <div id="message">Klik på "Start" for at begynde!</div>
+
+    <div id="knapper">
+      <button id="startButton">Start!</button>
+      <button id="higherButton" disabled>Du skal vælge et højere tal!</button>
+      <button id="lowerButton" disabled>Du skal vælge et lavere tal!</button>
+      <button id="correctButton" disabled>Du gættede rigtigt!!</button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
