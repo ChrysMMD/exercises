@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Breadcrumbs</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        font-family: Arial, sans-serif;
+      }
+      h1 {
+        margin-bottom: 20px;
+      }
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      nav {
+        align-items: center;
+        gap: 5px;
+        margin-bottom: 20px;
+      }
+      nav a {
+        text-decoration: none;
+        color: black;
+      }
+
+      nav a:hover {
+        color: #007bff;
+        text-decoration: line-through;
+        cursor: pointer;
+      }
+      nav span {
+        color: gray;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Breadcrumb Menu Generator</h1>
+    <nav id="breadcrumb"></nav>
+
+    <button id="generate">Generate breadcrumbs</button>
+
+    <script src="script.js"></script>
+  </body>
+</html>
