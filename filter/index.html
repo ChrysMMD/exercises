@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Filtre</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- Mine knapper der filtrerer køretøjerne -->
+    <div>
+      <button id="electric">El-drevne</button>
+      <button id="moreThanTwoSeats">Flere end 2 sæder</button>
+      <button id="electricJonas">El-drevne og ejet af Jonas</button>
+      <button id="rugPassenger">Rugbrødsdrevne med mere end 1 passager</button>
+      <button id="showAll">Alle køretøjer</button>
+    </div>
+
+    <!-- Tabellen -->
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Fuel</th>
+          <th>Passengers</th>
+          <th>Stops</th>
+          <th>Owned By</th>
+          <th>Electric</th>
+          <th>Tandem</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <script type="module">
+      import {
+        filterElectric,
+        filterMoreThanTwoSeats,
+        filterJonasElectric,
+        filterRugPassenger,
+        showAllVehicles,
+      } from "./script.js";
+
+      // Tilføj event listeners til knapperne
+      document
+        .getElementById("electric")
+        .addEventListener("click", filterElectric);
+      document
+        .getElementById("moreThanTwoSeats")
+        .addEventListener("click", filterMoreThanTwoSeats);
+      document
+        .getElementById("electricJonas")
+        .addEventListener("click", filterJonasElectric);
+      document
+        .getElementById("rugPassenger")
+        .addEventListener("click", filterRugPassenger);
+      document
+        .getElementById("showAll")
+        .addEventListener("click", showAllVehicles);
+    </script>
+  </body>
+</html>

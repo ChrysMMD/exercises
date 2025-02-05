@@ -1,0 +1,67 @@
+/* Generelt styling */
+table {
+  border-collapse: collapse;
+  font-family: "Arial", sans-serif;
+  font-size: 14px;
+  width: 100%;
+  margin-top: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Head styling */
+thead {
+  background-color: #4caf50;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Body styling */
+tbody > tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tbody > tr:nth-child(odd) {
+  background-color: #fff;
+}
+
+tbody > tr:hover {
+  background-color: #d3f9d8;
+  cursor: pointer;
+  transform: scale(1.01);
+  transition: all 0.2s ease;
+}
+
+/* Cell styling */
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
+}
+
+/* Knappestil */
+button {
+  background-color: #4caf50; /* Grøn farve */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 14px;
+  margin: 5px;
+  border-radius: 8px; /* Rundede hjørner */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Animation */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Blød skygge */
+}
+
+button:hover {
+  background-color: #45a049; /* Mørkere grøn ved hover */
+  transform: scale(1.05); /* Lidt større ved hover */
+}
+
+button:active {
+  transform: scale(0.95); /* Tryk-effekt */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Mindre skygge ved klik */
+}
