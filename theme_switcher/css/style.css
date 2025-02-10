@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1 {
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+main {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--main-bg-col);
+  padding: 20px 30px;
+}
+
+main h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--main-h2-col);
+}
+
+#themeImage {
+  width: 150%; /* Sæt bredden på billedet */
+  object-fit: cover; /* Sørg for at billedet fylder uden at forvrænge */
+}
+
+header {
+  background-color: var(--header-bg-col);
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+footer {
+  background-color: var(--header-bg-col);
+  color: white;
+  text-align: center;
+  padding: 10px;
+  width: 100%;
+}
+
+#dropbox {
+  margin: 15px 0px;
+  padding: 4px 20px;
+}
+
+/* Temaer */
+
+body[data-theme="hawaii"] {
+  --header-bg-col: #ff6347;
+  --main-bg-col: rgb(250, 250, 163);
+  --main-h2-col: rgb(3, 211, 211);
+}
+
+body[data-theme="dark"] {
+  --header-bg-col: #333333;
+  --main-bg-col: rgb(79, 79, 79);
+  --main-h2-col: rgb(232, 186, 186);
+}
+
+body[data-theme="light"] {
+  --header-bg-col: #f2d995;
+  --main-bg-col: rgb(232, 232, 232);
+  --main-h2-col: rgb(6, 175, 48);
+}
