@@ -1,0 +1,47 @@
+/* Jeg starter med bare at lave en general styling, hvor indholdet er på midten (knappen).*/
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+}
+
+button {
+  position: relative;
+  font-size: 20px;
+  padding: 15px 30px;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  background-color: transparent;
+  color: black;
+  border: 2px solid rgb(91, 91, 91);
+  border-radius: 5px;
+  z-index: 1;
+  transition: background-color 0.3s ease;
+}
+
+/*Her laver jeg et pseudoelement, der bruges til at lave farvefyldningen fra venstre til højre. Over 5 sekunder vil den starte med en width på 0 og ende med en width på 100%*/
+button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--width, 0);
+  height: 100%;
+  background-color: rgb(91, 91, 91);
+  transition: width 5s linear;
+  z-index: -1;
+}
+
+/* Her vores start-animation klasse, som vi kan tilføje med javascript til at starte animationen*/
+button.start-animation::before {
+  width: 100%;
+}
+
+button.start-animation {
+  color: white;
+  transition: color 5s linear;
+}
