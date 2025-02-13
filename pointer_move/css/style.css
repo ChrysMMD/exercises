@@ -1,0 +1,20 @@
+/*Først opretter jeg nogle CSS-variabler for lys og saturation. De skal starte på 50% for at have et balanceret udgangspunkt*/
+:root{
+    --saturation: 50%;
+    --lightness: 50%:
+}
+
+
+/*Nu vælger jeg hvordan min body skal se ud. Jeg får siden til at fylde hele skærmen, fjerner alt mellemrum ved margin:0, og centrere alt indhold. Derefter vælger jeg baggrundsfarven med HSL (hue, saturation, lightness). Hue 200 betyder at farven starter med blå, hvor jeg bruger mmine css variabler til at styre saturation og lightness. Min transition sørger for, at farveændringen foregår blød*/
+body {
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: hsl(200, var(--saturation), var(--lightness));
+    transition: background-color 0.1s ease-out;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
