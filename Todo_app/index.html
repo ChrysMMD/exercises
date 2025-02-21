@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Indkøbsliste</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Indkøbsliste</h1>
+      <hr />
+    </header>
+
+    <main>
+      <div class="kategorier">
+        <button class="food_category" id="show-all">Vis alle</button>
+        <button class="food_category">
+          <img src="./img/meat.png" alt="Kød" />
+        </button>
+        <button class="food_category">
+          <img src="./img/green.png" alt="Grønt" />
+        </button>
+        <button class="food_category">
+          <img src="./img/dairy.png" alt="Mejeri" />
+        </button>
+      </div>
+
+      <div id="shopping-list"></div>
+      <button id="add">+</button>
+      <button id="toggle-completed">Vis købte varer</button>
+      <div id="completed-list"></div>
+    </main>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
