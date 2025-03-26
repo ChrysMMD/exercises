@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Like Knap</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <button id="knap">Like</button>
+
+    <script>
+      //Variabel for at tælle antal likes
+      let likeCount = 0;
+
+      //variabel der henter knappen i HTML
+      const likeButton = document.getElementById("knap");
+
+      //Eventlistener til knappen, og forøgelse af like-tælleren ved brug at variablen med besked om at lægge til.
+      likeButton.addEventListener("click", () => {
+        likeCount++;
+
+        //Knapteksten bliver opdateret med både knaptal men også et s.
+        likeButton.innerText = `Like${likeCount === 1 ? "" : "s"} ${likeCount}`;
+      });
+    </script>
+  </body>
+</html>
