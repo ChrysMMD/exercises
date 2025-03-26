@@ -7,22 +7,36 @@
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
-    <button id="knap">Like</button>
+    <button id="knap1">Like</button>
+    <button id="knap2">Like</button>
 
     <script>
-      //Variabel for at tælle antal likes
-      let likeCount = 0;
+      function setupLikeButton(knapId) {
+        let likeCount = 0;
+        const button = document.getElementById(knapId);
 
-      //variabel der henter knappen i HTML
-      const likeButton = document.getElementById("knap");
+        button.addEventListener("click", () => {
+          likeCount++;
+          button.innerText = `Like${likeCount === 1 ? "" : "s"} ${likeCount}`;
+        });
+      }
 
-      //Eventlistener til knappen, og forøgelse af like-tælleren ved brug at variablen med besked om at lægge til.
-      likeButton.addEventListener("click", () => {
-        likeCount++;
+      setupLikeButton("knap1");
+      setupLikeButton("knap2");
 
-        //Knapteksten bliver opdateret med både knaptal men også et s.
-        likeButton.innerText = `Like${likeCount === 1 ? "" : "s"} ${likeCount}`;
-      });
+      //   //Variabel for at tælle antal likes
+      //   let likeCount = 0;
+
+      //   //variabel der henter knappen i HTML
+      //   const likeButton = document.getElementById("knap");
+
+      //   //Eventlistener til knappen, og forøgelse af like-tælleren ved brug at variablen med besked om at lægge til.
+      //   likeButton.addEventListener("click", () => {
+      //     likeCount++;
+
+      //     //Knapteksten bliver opdateret med både knaptal men også et s.
+      //     likeButton.innerText = `Like${likeCount === 1 ? "" : "s"} ${likeCount}`;
+      //   });
     </script>
   </body>
 </html>
