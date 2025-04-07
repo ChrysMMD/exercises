@@ -21,11 +21,11 @@ export default function Header() {
       </div>
 
       <nav className="hidden md:flex space-x-6 text-white">
-        <NavLink href="/">Mac</NavLink>
-        <NavLink href="/features">iPhone</NavLink>
-        <NavLink href="/features">iPad</NavLink>
-        <NavLink href="/pricing">iWatch</NavLink>
-        <NavLink href="/gallery">Support</NavLink>
+        <NavLink href="/mac">Mac</NavLink>
+        <NavLink href="/iphone">iPhone</NavLink>
+        <NavLink href="/ipad">iPad</NavLink>
+        <NavLink href="/iwatch">iWatch</NavLink>
+        <NavLink href="/support">Support</NavLink>
       </nav>
 
       <div className="flex items-center space-x-4">
