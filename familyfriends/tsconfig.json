@@ -27,7 +27,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/app/api/pets/route.js"
+    "src/app/api/pets/route.js",
+    "src/app/api/pets/refresh-token.js"
   ],
   "exclude": ["node_modules"]
 }
