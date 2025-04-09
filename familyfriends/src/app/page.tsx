@@ -32,16 +32,14 @@ export default function Page() {
 
   return (
     <div>
-      <h1 className="text-3xl font-bold mb-4">Familyfriends</h1>
+      <h1 className="text-3xl font-bold mb-4 pl-8">Familyfriends</h1>
 
       {error && <p className="text-red-500">{error}</p>}
 
-      <div className="flex flex-row flex-wrap gap-4">
-        <div className="flex flex-row flex-wrap gap-4">
-          {pets.map((pet: any) => (
-            <PetCard key={pet.id} pet={pet} />
-          ))}
-        </div>
+      <div className="flex flex-row flex-wrap gap-8 justify-center">
+        {pets.map((pet: any) => (
+          <PetCard key={pet.id} pet={pet} />
+        ))}
       </div>
     </div>
   );
