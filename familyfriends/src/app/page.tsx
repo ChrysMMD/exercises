@@ -2,6 +2,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import React from "react";
+import PetCard from "./components/PetCard";
 
 export default function Page() {
   const [pets, setPets] = useState([]);
@@ -36,21 +37,11 @@ export default function Page() {
       {error && <p className="text-red-500">{error}</p>}
 
       <div className="flex flex-row flex-wrap gap-4">
-        {pets.map((pet: any) => (
-          <div
-            key={pet.id}
-            className="flex flex-col p-4 border rounded-lg max-w-xs w-full sm:w-1/2 lg:w-1/3"
-          >
-            <img
-              src={pet.primary_photo_cropped?.small || "/default.jpg"}
-              alt={pet.name}
-              className="w-full h-48 object-cover rounded-md"
-            />
-            <h3 className="text-xl font-semibold mt-2">{pet.name}</h3>
-            <p>{pet.breeds.primary}</p>
-            <p>{pet.age}</p>
-          </div>
-        ))}
+        <div className="flex flex-row flex-wrap gap-4">
+          {pets.map((pet: any) => (
+            <PetCard key={pet.id} pet={pet} />
+          ))}
+        </div>
       </div>
     </div>
   );
