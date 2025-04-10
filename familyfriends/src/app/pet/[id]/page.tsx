@@ -1,6 +1,10 @@
 // app/pet/[id]/page.tsx
 import { notFound } from "next/navigation";
 import { getAccessToken } from "../../api/pets/refresh-token";
+import PetTag from "@/app/components/PetTag";
+import Button from "@/app/components/Button";
+import BackButton from "@/app/components/BackButton";
+import Link from "next/link";
 
 export default async function PetDetail({
   params,
@@ -21,36 +25,32 @@ export default async function PetDetail({
   const pet = data.animal;
 
   return (
-    <div className="p-6 max-w-3xl mx-auto">
-      <img
-        src={pet.primary_photo_cropped?.medium || "/default.jpg"}
-        alt={pet.name}
-        className="w-full h-64 object-cover rounded-xl mb-4"
-      />
-      <h1 className="text-3xl font-bold mb-2">{pet.name}</h1>
-      <p className="text-lg text-gray-600 italic mb-4">
-        {pet.description || "Ingen beskrivelse endnu 🐾"}
+    <div className="p-6 max-w-3xl mx-auto flex flex-col gap-4">
+      <div className="relative">
+        <BackButton />
+        <img
+          src={pet.primary_photo_cropped?.medium || "/default.jpg"}
+          alt={pet.name}
+          className="w-full mx-auto aspect-square object-cover rounded-xl"
+        />
+      </div>
+      <h1 className="text-3xl font-bold text-left">{pet.name}</h1>
+      <div className="flex flex-row gap-2">
+        <PetTag bgColor="bg-[var(--color-blue)]">{pet.type}</PetTag>
+        <PetTag bgColor="bg-[var(--color-pink)]">{pet.gender}</PetTag>
+        <PetTag bgColor="bg-[var(--color-green)]">{pet.age}</PetTag>
+        <PetTag bgColor="bg-[var(--color-yellow)]">{pet.breeds.primary}</PetTag>
+      </div>
+      <p className="text-lg text-gray-600 italic">
+        {pet.description || "Ingen beskrivelse endnu"}
+      </p>
+      <p className="mb-4 text-[var(--color-grey)] text-xs">
+        Opdateret: {new Date(pet.published_at).toLocaleDateString()}
       </p>
 
-      <div className="mb-4">
-        <p>
-          <strong>Race:</strong> {pet.breeds.primary}
-        </p>
-        <p>
-          <strong>Køn:</strong> {pet.gender}
-        </p>
-        <p>
-          <strong>Alder:</strong> {pet.age}
-        </p>
-        <p>
-          <strong>Opdateret:</strong>{" "}
-          {new Date(pet.updated_at).toLocaleDateString()}
-        </p>
-      </div>
-
-      <button className="bg-pink-500 text-white py-2 px-4 rounded hover:bg-pink-600 transition">
-        Adopter {pet.name}
-      </button>
+      <Button href={`/adopt/${pet.id}`}>
+        <strong>Adopter</strong> {pet.name}
+      </Button>
     </div>
   );
 }

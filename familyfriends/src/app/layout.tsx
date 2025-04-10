@@ -21,7 +21,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={manrope.variable}>
       <body className="flex items-center justify-center min-h-screen">
-        <main className="w-full max-w-3xl p-4">{children}</main>
+        <main className="w-full max-w-3xl p-4 flex items-center">
+          {children}
+        </main>
       </body>
     </html>
   );
