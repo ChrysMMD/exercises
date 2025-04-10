@@ -1,4 +1,3 @@
-// app/components/icons/BackIcon.tsx
 export default function BackIcon() {
   return (
     <svg
