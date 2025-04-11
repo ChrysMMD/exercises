@@ -1,55 +1,17 @@
+"use client";
+
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import StarButton from "./StarButton";
+import { StarButton } from "./StarButton";
+import { Pet } from "../types/types";
 
 //Definere pet-objektet med hvad det skal indeholde
 type PetCardProps = {
-  pet: {
-    id: string;
-    name: string;
-    age: string;
-    breeds: {
-      primary: string;
-    };
-    primary_photo_cropped?: {
-      small: string;
-    };
-  };
+  pet: Pet;
 };
 
 //komponent som modtager pet-objektet som prop
 export default function PetCard({ pet }: PetCardProps) {
-  const [isFavorite, setIsFavorite] = useState(false);
-
-  useEffect(() => {
-    // Tjek om dyret er gemt i localStorage ved første render
-    const storedFavorites = JSON.parse(
-      localStorage.getItem("favorites") || "[]"
-    );
-    const found = storedFavorites.find((fav: any) => fav.id === pet.id);
-    if (found) setIsFavorite(true);
-  }, [pet.id]);
-
-  const toggleFavorite = () => {
-    const storedFavorites = JSON.parse(
-      localStorage.getItem("favorites") || "[]"
-    );
-
-    let updatedFavorites;
-    if (isFavorite) {
-      // Fjern fra favorites
-      updatedFavorites = storedFavorites.filter(
-        (fav: any) => fav.id !== pet.id
-      );
-    } else {
-      // Tilføj til favorites
-      updatedFavorites = [...storedFavorites, pet];
-    }
-
-    localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
-    setIsFavorite(!isFavorite);
-  };
-
   return (
     <>
       <Link
@@ -57,7 +19,7 @@ export default function PetCard({ pet }: PetCardProps) {
         className="flex flex-col pb-4 rounded-2xl max-w-xs w-full sm:w-1/2 lg:w-1/3 bg-white shadow-[0_4px_16px_rgba(19,21,68,0.06)] hover:shadow-md transition"
       >
         <div className="relative">
-          <StarButton />
+          <StarButton className="absolute top-2 right-2" pet={pet} />
 
           <img
             src={pet.primary_photo_cropped?.small || "/default.jpg"}

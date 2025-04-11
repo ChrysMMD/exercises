@@ -4,7 +4,7 @@ export default function StarIcon({ isFilled = false }: { isFilled?: boolean }) {
       width="24"
       height="24"
       viewBox="0 0 24 24"
-      fill={isFilled ? "black" : "none"}
+      fill={isFilled ? "white" : "none"}
       xmlns="http://www.w3.org/2000/svg"
     >
       <defs>
@@ -12,7 +12,7 @@ export default function StarIcon({ isFilled = false }: { isFilled?: boolean }) {
           <circle cx="12" cy="12" r="12" />
         </clipPath>
         <clipPath id="clip0_1_270">
-          <rect width="24" height="24" fill="white" />
+          <rect width="24" height="24" fill="none" />
         </clipPath>
       </defs>
 
@@ -33,12 +33,12 @@ export default function StarIcon({ isFilled = false }: { isFilled?: boolean }) {
           cx="12"
           cy="12"
           r="12"
-          fill={isFilled ? "#fff" : "#FEFEFE"}
-          fillOpacity={isFilled ? "1" : "0.50"}
+          fill={isFilled ? "#fff" : "#fff"}
+          fillOpacity={isFilled ? "0.50" : "0.50"}
         />
         <path
           d="M12 5L14.163 9.27865L19 9.96898L15.5 13.2976L16.326 18L12 15.7787L7.674 18L8.5 13.2976L5 9.96898L9.837 9.27865L12 5Z"
-          stroke={isFilled ? "none" : "white"}
+          stroke={isFilled ? "white" : "white"}
           strokeLinecap="round"
           strokeLinejoin="round"
         />

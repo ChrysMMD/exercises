@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Manrope } from "next/font/google";
 import "./globals.css";
+import FooterNav from "./components/FooterNav";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -24,6 +25,7 @@ export default function RootLayout({
         <main className="w-full max-w-3xl p-4 flex items-center">
           {children}
         </main>
+        <FooterNav />
       </body>
     </html>
   );
