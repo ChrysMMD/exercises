@@ -14,10 +14,12 @@ type CartState = {
   addToCart: (product: Product) => void;
   removeFromCart: (id: number) => void;
   goToPayment: () => void;
+  setCart: (items: Product[]) => void;
 };
 
 export const useCart = create<CartState>((set) => ({
   items: [],
+  setCart: (items) => set({ items }),
   addToCart: (product) =>
     set((state) => {
       const existing = state.items.find((item) => item.id === product.id);
